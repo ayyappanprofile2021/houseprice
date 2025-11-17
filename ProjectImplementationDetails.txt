@@ -1,0 +1,57 @@
+HousePrice Project:
+-------------------
+notebook\HousePrice.csv - Data for the project.
+
+artifacts - Contains the data files created by code for raw/train/test data.
+
+src/components/__init__.py - File required to expose components as package.
+
+src/components/data_ingestion.py - Contains method "initiatedataingestion" to load the data from HousePrice.csv and generate
+                                   the data.csv, train.csv, test.csv files using train_test_split function under artifacts folder.
+
+src/components/data_transformation.py - Build a Preprocessor object and apply the preprocessing logic on train and test data
+to store this object as .pkl file under artifacts folder and returs the train data and test data as arrays.
+
+src/components/model_trainer.py - Contains initiate_model_trainer method to get the best model out of the collection of models
+and fit/predict that best model on train/test data to return the r2score.
+
+src/pipeline/__init__.py - File to make the pipeline folder exposed as package.
+
+src/pipeline/predict_pipeline.py - File to contains method to get the data from HTML page and return the data 
+as a dataframe.Also contains method "Predict" to perform the prediction.
+
+exception.py - To handle the custom exception.
+
+logger.py - To handle the custom logging.
+
+utils.py - To contain utility methods.
+
+app.py - To contain method to call the methods in predict_pipeline.py to perform the prediction.
+
+home.html -  Form to submit the data for predicting the houseprice.
+
+
+DataTypes:
+----------
+Input Features:
+---------------
+longitude             float64
+latitude              float64
+housing_median_age      int64
+total_rooms             int64
+total_bedrooms        float64
+population              int64
+households              int64
+median_income         float64
+ocean_proximity        object
+
+Target:
+-------
+median_house_value      int64
+
+
+
+							
+							
+								   
+	
