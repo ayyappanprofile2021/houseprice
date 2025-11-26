@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    </link>
+    <script src="{{ url_for('static', filename='script/script.js')}}"></script>
+</head>
+<body>
+
+<table border="0" style="background-color: green; width: 100%; " align="center">
+  <tr>
+    <td><center><h2>House Price -  Predictions.</h2></center></td>
+  </tr>
+</table>
+
+<form action="{{ url_for('predict_datapoint')}}" method="post">
+  <label for="fname">Longitude</label>
+  <input type="text" id="longitude" name="longitude" placeholder="Longitude..">
+
+  <label for="lname">Latitude</label>
+  <input type="text" id="latitude" name="latitude" placeholder="Latitude..">
+
+  <label for="lname">Housing Median Age</label>
+  <input type="text" id="housingmedianage" name="housingmedianage" placeholder="Housing Median Age..">
+
+  <label for="lname">Total Rooms</label>
+  <input type="text" id="totalrooms" name="totalrooms" placeholder="Total Rooms..">
+
+  <label for="lname">Total Bed Rooms</label>
+  <input type="text" id="totalbedrooms" name="totalbedrooms" placeholder="Total Bed Rooms..">
+
+  <label for="lname">Population</label>
+  <input type="text" id="population" name="population" placeholder="Population..">
+
+  <label for="lname">House Holds</label>
+  <input type="text" id="households" name="households" placeholder="House Holds..">
+
+  <label for="lname">Media Income</label>
+  <input type="text" id="mediaincome" name="mediaincome" placeholder="Media Income..">
+
+
+  <label for="oceanproximity">Ocean Proximity</label>
+  <select id="oceanproximity" name="oceanproximity">
+    <option value="<1H OCEAN"><1H OCEAN</option>
+    <option value="INLAND">INLAND</option>
+    <option value="island">ISLAND</option>
+    <option value="NEAR BAY">NEAR BAY</option>
+    <option value="nearocean">NEAR OCEAN</option>
+  </select>  
+  <input type="submit" value="Submit">
+</form>
+<h2>
+    The Median House Value is {{ results }}
+</h2>
+</body>
+</html>
+
+
